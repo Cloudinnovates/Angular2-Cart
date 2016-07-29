@@ -10,8 +10,11 @@ import './rxjs-operators';
 @Component({
     selector: 'my-app',
     template: `
+        <div class="col-md-2"></div>
+         <item-list (onAdd)="onAdd($event)"></item-list>
         <child-component></child-component>
-        <item-list (onAdd)="onAdd($event)"></item-list>
+        <div class="col-md-2"></div>
+
     `,
     directives: [ChildComponent,ItemListComponent]
 })
