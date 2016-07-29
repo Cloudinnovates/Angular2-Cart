@@ -7,8 +7,8 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'child-component',
     template: `
-    <div class="fLeft">
-        <h2>Items</h2>
+    <div class="fRight">
+        <h2>Cart</h2>
     </div>
     `
 })
