@@ -3,7 +3,7 @@
  */
 
 import {Component,ViewChild} from '@angular/core';
-import {ChildComponent} from './cart/child.component';
+import {CartComponent} from './cart/cart.component';
 import {ItemListComponent} from './items/item-list.component';
 import './rxjs-operators';
 
@@ -12,18 +12,18 @@ import './rxjs-operators';
     template: `
         <div class="col-md-2"></div>
          <item-list (onAdd)="onAdd($event)"></item-list>
-        <child-component></child-component>
+        <cart-component></cart-component>
         <div class="col-md-2"></div>
 
     `,
-    directives: [ChildComponent,ItemListComponent]
+    directives: [CartComponent,ItemListComponent]
 })
 
 export class AppComponent {
-    @ViewChild(ChildComponent) private childComponent:ChildComponent;
+    @ViewChild(CartComponent) private cartComponent:CartComponent;
 
     onAdd(item){
         var itemCopy = Object.assign({},item);
-        this.childComponent.addToCart(itemCopy);
+        this.cartComponent.addToCart(itemCopy);
     }
 }

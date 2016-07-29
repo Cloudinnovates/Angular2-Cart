@@ -7,7 +7,7 @@ import {Item} from '../items/item';
 
 
 @Component({
-    selector: 'child-component',
+    selector: 'cart-component',
     template: `
     <div class="col-md-4 box mt14">
         <span class="fs4">Cart</span>
@@ -30,7 +30,7 @@ import {Item} from '../items/item';
     `
 })
 
-export class ChildComponent {
+export class CartComponent {
     private items = [];
     private obj:Object = {};
     addToCart(item){
@@ -54,7 +54,8 @@ export class ChildComponent {
             delete _this.obj[item.id];
             _this.items.splice(index,1);
         }else{
-            _this.items[index].quantity=_this.items[index].quantity-1;
+            _this.obj[item.id]=_this.obj[item.id]-1;
+            _this.items[index].quantity=_this.obj[item.id];
         }
     }
 
