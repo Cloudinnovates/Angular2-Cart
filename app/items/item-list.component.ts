@@ -2,7 +2,7 @@
  * Created by namita on 7/29/16.
  */
 
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {ItemService} from './item.service';
 import {Item} from './item';
 
@@ -14,7 +14,8 @@ import {Item} from './item';
          <div>
             <ul class="items">
                 <li *ngFor="let item of items">
-                    <span>{{item.name}}</span>
+                    <span class="text">{{item.name}}</span>
+                    <span class="glyphicon glyphicon-plus" (click)="addToCart(item)"></span>
                 </li>
             </ul>
         </div>
@@ -26,16 +27,23 @@ import {Item} from './item';
 export class ItemListComponent {
     constructor(private _itemService:ItemService) {
         //should be moved to ngOnInit lifecycle hook
-        this.getPosts();
+        this.getItems();
     }
+    @Output() onAdd = new EventEmitter<Item>();
 
     private items:Item[] = [];
     private errorMessage:any = '';
 
-    getPosts() {
+    getItems() {
         this._itemService.getData()
             .subscribe(
                 items => this.items = items,
                 error => this.errorMessage = <any>error);
     }
+
+    addToCart(item){
+        this.onAdd.emit(item);
+    }
+
+
 }
