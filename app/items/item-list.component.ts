@@ -22,7 +22,7 @@ import {Item} from './item';
         </div>
     </div>
     `,
-    providers:<any>[ItemService]
+    providers: <any>[ItemService]
 })
 
 export class ItemListComponent {
@@ -30,6 +30,7 @@ export class ItemListComponent {
         //should be moved to ngOnInit lifecycle hook
         this.getItems();
     }
+
     @Output() onAdd = new EventEmitter<Item>();
 
     private items:Item[] = [];
@@ -42,7 +43,7 @@ export class ItemListComponent {
                 error => this.errorMessage = <any>error);
     }
 
-    addToCart(item){
+    addToCart(item) {
         this.onAdd.emit(item);
     }
 

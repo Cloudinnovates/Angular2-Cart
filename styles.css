@@ -4,6 +4,7 @@
     padding: 0;
     width: 24em;
 }
+
 .items li .text {
     cursor: pointer;
     position: relative;
@@ -15,7 +16,7 @@
     border-radius: 4px;
 }
 
-.icon{
+.icon {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -25,32 +26,32 @@
     border-radius: 4px;
 }
 
-.smallIcon{
+.smallIcon {
     cursor: pointer;
     position: relative;
     left: 0;
     padding: 1.5em .3em;
     height: 2.6em;
-    width:6.33% !important;
+    width: 6.33% !important;
 }
 
-.fLeft{
+.fLeft {
     float: left;
 }
 
-.fRight{
+.fRight {
     float: right;
 }
 
-.fs4{
+.fs4 {
     font-size: 4em;
 }
 
-.box{
+.box {
     border-radius: 4px;
-    background-color:royalblue;
+    background-color: royalblue;
 }
 
-.mt14{
-    margin-top:14px;
+.mt14 {
+    margin-top: 14px;
 }
