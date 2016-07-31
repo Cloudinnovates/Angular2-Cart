@@ -20,7 +20,7 @@ import {Component} from '@angular/core';
                     <span class="col-md-1"></span>
                 </li>
             </ul>
-            <div>
+            <div *ngIf="!items.length">
                 Your cart is empty!
             </div>
         </div>
